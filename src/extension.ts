@@ -14,7 +14,7 @@ export function activate(context: vscode.ExtensionContext) {
         const formattedText = fullText.replace(/>([A-Za-z\s]+)</g, (match, p1) => {
             const suggestionCode = suggestions[p1.trim()];
             if (suggestionCode) {
-                return ` data-jex-ml="${suggestionCode}">${p1}`;
+                return ` data-jex-ml="${suggestionCode}">${p1}<`;
             }
             return match;
         });
